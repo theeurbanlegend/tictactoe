@@ -1,7 +1,7 @@
 let init=0;
 
 function loader() {
-  init = setTimeout(showPage, 4500);
+  init = setTimeout(showPage, 5000);
 }
 
 function showPage() {
