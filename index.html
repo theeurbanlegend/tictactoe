@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TicTacToe Showdown</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    
+<!-- Create a container for the Tic Tac Toe game board -->
+    <div class="container">
+        <!-- this div presents the winner/draw after the game -->
+        <!-- A javascript function should be used to present a message according to the state of the game -->
+        <div id="winner">Game On</div>
+
+
+        <div id="table">
+            <!-- Use CSS Grid or Flexbox to create a grid layout for the game board -->
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <!-- Create buttons or clickable elements for each cell of the game board -->
+        <!-- make the text change whenever its the other players(player O) turn -->
+        <div id="status">Player X's turn</div>
+
+        <!-- Add a reset button to allow players to start a new game -->
+        <!-- call onclick functions when you've created them in javascript  -->
+        <button onclick="" id="reset">Reset</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
