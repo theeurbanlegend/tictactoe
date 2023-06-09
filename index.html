@@ -5,13 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>TicTacToe Showdown</title>
 </head>
 <body onload="loader()">
-    <p>content</p>
+    <h1>TIcTAcTOe</h1>
     <div id="preloader">
-        
-           
             <div id="san3"></div>
             <div id="san4"></div>
             <div id="san5"></div>
@@ -25,7 +23,7 @@
     <div >
         <!-- this div presents the winner/draw after the game -->
         <!-- A javascript function should be used to present a message according to the state of the game -->
-        <div id="winner">Game On</div>
+        <div class="announcer hide display" id="winner">Game On</div>
 
 
         <div id="table">
@@ -42,12 +40,16 @@
         </div>
         <!-- Create buttons or clickable elements for each cell of the game board -->
         <!-- make the text change whenever its the other players(player O) turn -->
-        <div id="status">Player X's turn</div>
+        <!--Added class -status to div -->
+        <section class="display" id="status">
+            Player <span class="display-player playerX" >X</span>'s turn
+        </section>
+       
 
         <!-- Add a reset button to allow players to start a new game -->
         <!-- call onclick functions when you've created them in javascript  -->
-            <button onclick="" id="reset">Reset</button>
-        </div>
+            <button id="reset">Reset</button>
+       
 
 </div>
     <script src="main.js"></script>
