@@ -1,7 +1,8 @@
-
+let init=0;
 // this  array.from converts the div/ cell classes to elements in an array
 const announcer=document.querySelector(".announcer")
 const tiles=Array.from(document.querySelectorAll(".cell"))
+const displaySec=document.querySelector(".display-2")
 const playerStatus=document.querySelector(".display-player")
 const resetBtn=document.getElementById("reset")
 /* let startingPlayer= ""
@@ -12,7 +13,7 @@ let gameOn=true
 
 //Initializing the loading page
 function loader(){
-  let init=0;
+ 
   init = setTimeout(showPage, 5000);
 }
 
@@ -43,13 +44,15 @@ let winConditions=[
   [1,4,7]
 ]
 //Initialise game
+announcer.classList.remove('hide')
+displaySec.classList.remove("noshow")
 // forEach method iterates across the elements in the tiles array applies any function to all tiles in the board
 tiles.forEach((tile,index)=>{
   tile.addEventListener("click", () =>
    displaySymbol(tile,index)
   )}
 )
-// a constant is declared that holds the value assedby a function which checks that the tile being selected has a vlaue in it
+// a constant is declared that holds the value assedby a function which checks that the tile being selected has a vlaue in it. This is using truthy or falsy values
 const isValidTurn = (tile) => {
   if (tile.innerText === 'X' || tile.innerText === 'O'){
       return false;
@@ -66,7 +69,7 @@ function displaySymbol (tile, index)  {
       changePlayerTurn();
   }
 }
-// needs recalibration
+
 function changePlayerTurn(){
   if (currentPlayer==="X"){
     currentPlayer="O"
@@ -113,13 +116,17 @@ function declare(type) {
   switch(type){
       case playerOWon:
           announcer.innerHTML = 'Fatality! Player <span class="playerO">O</span> Wins';
+          displaySec.classList.add("noshow")
           break;
       case playerXWon:
           announcer.innerHTML = ' Fatality! Player <span class="playerX">X</span> Wins';
+          displaySec.classList.add("noshow")
           break;
       case Tie:
           announcer.innerText = 'Its a tie folks!';
+          displaySec.classList.add("noshow")
   }
+  displaySec.classList.add("noshow")
   announcer.classList.remove('hide');
 };
 
@@ -130,7 +137,7 @@ resetBtn.addEventListener("click",()=>{
   currentPlayer="X"
   gameOn=true
   announcer.classList.add('hide')
-
+  displaySec.classList.remove("noshow")
   tiles.forEach((tile)=>{
     tile.innerText=""
   }

@@ -2,7 +2,9 @@ html{
     width:100%;
     height:100%;
     position: relative;
+    background-image:url(/tictactoe/ticbg.jpg);
     background-size: cover;
+    
     
 }
  
@@ -151,13 +153,19 @@ html{
 }
 /* Apply styling to the container to make it visually appealing */
 .container {
+    width:100%;
+    height:100%;
     text-align: center;
     font-size: larger;
     padding-top: 10px;
-    background-color: black;
+    z-index:0;
+    backdrop-filter:blur(8px);
     background-size: cover;
   }
-
+  /* Hides the turn display when the winner is declared */
+.noshow{
+    display:none;
+}
   /* Use CSS Grid or Flexbox to style the grid layout of the game board */
   #table {
     display: grid;
