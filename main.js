@@ -5,6 +5,7 @@ const tiles=Array.from(document.querySelectorAll(".cell"))
 const displaySec=document.querySelector(".display-2")
 const playerStatus=document.querySelector(".display-player")
 const resetBtn=document.getElementById("reset")
+const gameOnEl=document.getElementById("gameOn")
 /* let startingPlayer= ""
 let currentPlayer=startingPlayer */
 let board=["","","","","","","","",""]
@@ -13,7 +14,6 @@ let gameOn=true
 
 //Initializing the loading page
 function loader(){
- 
   init = setTimeout(showPage, 5000);
 }
 
@@ -60,7 +60,7 @@ const isValidTurn = (tile) => {
 
   return true;
 };
-function displaySymbol (tile, index)  {
+function displaySymbol (tile, index){
   if(isValidTurn(tile) && gameOn) {
       tile.innerText = currentPlayer;
       tile.classList.add(`player${currentPlayer}`);
@@ -116,15 +116,12 @@ function declare(type) {
   switch(type){
       case playerOWon:
           announcer.innerHTML = 'Fatality! Player <span class="playerO">O</span> Wins';
-          displaySec.classList.add("noshow")
           break;
       case playerXWon:
           announcer.innerHTML = ' Fatality! Player <span class="playerX">X</span> Wins';
-          displaySec.classList.add("noshow")
           break;
       case Tie:
           announcer.innerText = 'Its a tie folks!';
-          displaySec.classList.add("noshow")
   }
   displaySec.classList.add("noshow")
   announcer.classList.remove('hide');
@@ -136,8 +133,8 @@ resetBtn.addEventListener("click",()=>{
   board=["","","","","","","","",""]
   currentPlayer="X"
   gameOn=true
-  announcer.classList.add('hide')
   displaySec.classList.remove("noshow")
+  announcer.classList.add('hide')
   tiles.forEach((tile)=>{
     tile.innerText=""
   }
