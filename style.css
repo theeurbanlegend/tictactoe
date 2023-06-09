@@ -1,0 +1,243 @@
+html{
+    width:100%;
+    height:100%;
+    position: relative;
+    background-image:url(ticbg.jpg);
+    background-size: cover;    
+}
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap');
+h1{
+    color:rgb(34, 207, 207);
+    font-family: 'Barlow', sans-serif;
+    text-align:center;
+    font-weight:bold;
+    margin-top: 40px;
+    margin-bottom:0px;
+}
+ 
+#preloader{
+    position: absolute;
+    backdrop-filter: blur(16px);
+    top:0;
+    left:0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border:solid;
+    width:100%;
+    height:100%;
+}
+
+#san3{
+    position: absolute;
+    background-color:aqua;
+    height:10px;
+    width:140px;
+    border-radius:5px;
+    justify-content: center;
+    transform: rotateZ(45deg);
+    animation-name: spin;
+    animation-delay:0.6s;
+    animation-timing-function: ease-in-out;
+    animation-duration:3s;
+    animation-iteration-count: 1;
+    animation-direction:backwards;
+    animation-fill-mode:forwards;
+   
+}
+#san4{
+    position: absolute;
+    background-color:aqua;
+    transform: rotateZ(-45deg);
+    height:10px;
+    width:140px;
+    border-radius:5px;
+    justify-content: center;
+    animation-name: spin;
+    animation-delay:0.6s;
+    animation-timing-function: ease-in-out;
+    animation-duration:3s;
+    animation-iteration-count: 1;
+    animation-direction:backwards;
+    animation-fill-mode:forwards;
+
+}
+#san5{
+    position: absolute;
+    border:solid 20px brown;
+    height:100px;
+    width:100px;
+    opacity:0;
+    border-radius:500px;
+    justify-content: center;
+    animation-name: reduceA;
+    animation-delay:3s;
+    animation-timing-function: linear;
+    animation-duration:1s;
+    animation-iteration-count:1;
+    animation-direction:forwards;
+    animation-fill-mode:forwards;
+
+}
+#san6{
+    position: absolute;
+    border:solid 20px brown;
+    height:100px;
+    width:100px;
+    opacity:0;
+    border-radius:500px;
+    justify-content: center;
+    animation-name: reduceB;
+    animation-delay:3s;
+    animation-timing-function:linear;
+    animation-duration:1s;
+    animation-iteration-count: 1;
+    animation-direction:forwards;
+    animation-fill-mode:forwards;
+
+}
+#san7{
+    position: absolute;
+    border:solid 20px brown;
+    opacity:0;
+    height:100px;
+    width:100px;
+    border-radius:500px;
+    justify-content: center;
+    animation-name: reduceC;
+    animation-delay:3s;
+    animation-timing-function: ease-in-out;
+    animation-duration:1s;
+    animation-iteration-count: 1;
+    animation-direction:forwards;
+    animation-fill-mode:forwards;
+
+}
+#san8{
+    z-index:1;
+    background-color:brown;
+    height:10px;
+    width:0rem;
+    border-radius:5px;
+    animation-name:cross ;
+    animation-delay:4s;
+    animation-timing-function:linear;
+    animation-duration:0.5s;
+    animation-iteration-count: 1;
+    animation-direction:forwards;
+    animation-fill-mode:forwards;
+}
+@keyframes spin {
+    from{transform: origin 0deg;opacity:100;}
+    to{transform: rotate(720deg);opacity:0;}
+}
+
+@keyframes reduceA{
+    from{transform-origin: 0%;}
+    to{opacity:100;transform:scale(0.7) translateX(-110%);}
+}
+@keyframes reduceB{
+    from{transform-origin: 0%;}
+    to{opacity:100;transform:scale(0.7)}
+}
+@keyframes reduceC{
+    from{transform-origin: 0%;}
+    to{opacity:100;transform:scale(0.7) translateX(110%)}
+}
+
+@keyframes cross{
+    from{transition: width 0.5s;}
+    to{width: 20rem ;}
+}
+/* Apply styling to the container to make it visually appealing */
+.container {
+    width:100%;
+    height:100%;
+    text-align: center;
+    font-size: larger;
+    padding-top: 10px;
+    background-size: cover;
+  }
+  /* Hides the turn display when the winner is declared */
+.noshow{
+    display:none;
+}
+  /* Use CSS Grid or Flexbox to style the grid layout of the game board */
+  #table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    width: 300px;
+    height: 300px;
+    margin: 10px auto;
+    border-radius: 10px;
+    border: 2px solid whitesmoke;
+  }
+  .hide{
+    display: none;
+  }
+  /* style the cell layout of the game board */
+  .cell {
+    background-color: white;
+    color:black;
+    display: flex;
+    font-family: 'Barlow', sans-serif;
+    font-weight:bold;
+    border-radius: 10px;
+    margin: 3px;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    cursor: pointer;
+  }
+  /* Modify the winner/draw text to look appealing */
+  #winner{
+    margin-top: 10px;
+    font-weight: 700;
+    color: aqua;
+  }
+  #gameOn{
+    margin-top: 10px;
+    font-weight: 700;
+    color: aqua;
+  }
+
+  /* Modify the player's turn text to look appealing */
+  #status {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bolder;
+    color: aqua;
+
+  }
+  .center{
+    position:absolute;
+    display:flex;
+    justify-content:center;
+    align-items:top;
+    margin-top:30px;
+    width:100%;
+    height:100%;
+  }
+  button{
+    color: goldenrod;
+    font-family: 'Barlow', sans-serif;
+    font-weight:bold;
+    border-radius: 5px;
+    border-color:whitesmoke;
+    width:20vw;
+    height:10vh;
+  }
+
+  /* Apply styles to the buttons or clickable elements to make them visually appealing */
+  #reset {
+    margin-top: 20px;
+    color: goldenrod;
+    font-family: 'Barlow', sans-serif;
+    font-weight:bold;
+    border-radius: 5px;
+    border-color:whitesmoke;
+    width:10vw;
+    height:5vh;
+  }
+
