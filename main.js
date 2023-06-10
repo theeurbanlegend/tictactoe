@@ -116,9 +116,11 @@ function declare(type) {
   switch(type){
       case playerOWon:
           announcer.innerHTML = 'Fatality! Player <span class="playerO">O</span> Wins';
+          mySound.play()
           break;
       case playerXWon:
           announcer.innerHTML = ' Fatality! Player <span class="playerX">X</span> Wins';
+          mySound.play()
           break;
       case Tie:
           announcer.innerText = 'Its a tie folks!';
@@ -140,3 +142,22 @@ resetBtn.addEventListener("click",()=>{
   }
   )
 })
+
+// Additional Content
+class sound {
+  constructor(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function () {
+      this.sound.play();
+    };
+    this.stop = function () {
+      this.sound.pause();
+    };
+  }
+}
+  let mySound = new sound("Fatality.mp3");
